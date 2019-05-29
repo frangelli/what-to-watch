@@ -4,6 +4,7 @@
   "description": "What to Watch React frontend",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.config.js",
     "build": "webpack --config ./webpack.config.js"
   },
   "author": "Leonardo Frangelli",
