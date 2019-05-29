@@ -2,7 +2,7 @@ import axios from "axios";
 import * as types from "../actionTypes";
 
 export const search = searchTerm => {
-  const req = axios.get(`/search/search?q=${searchTerm}`);
+  const req = axios.get(`http://localhost:3000/search/search?q=${searchTerm}`);
   return {
     type: types.SEARCH,
     promise: req

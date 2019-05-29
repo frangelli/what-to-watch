@@ -22,7 +22,7 @@ export default (state = initialState, action) => {
         success: prevState => ({
           ...prevState,
           loading: false,
-          movies: payload.data.results
+          movies: payload.data.Search
         }),
         failure: prevState => ({
           ...prevState,
