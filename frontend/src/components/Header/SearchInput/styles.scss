@@ -1,0 +1,35 @@
+@import "../../../variables";
+
+.has-search .form-control {
+  padding-left: 3em;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  pointer-events: none;
+  color: $grey-text;
+}
+
+#search-input {
+  border-left: 1px solid $light-grey-background;
+  input {
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    &:focus {
+      background: $light-grey-background !important;
+    }
+  }
+}
+
+.has-search {
+  margin-bottom: 0 !important;
+}
