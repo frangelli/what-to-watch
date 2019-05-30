@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { search, setSearchData } from "store/actions";
@@ -22,11 +23,18 @@ export class SearchInput extends Component {
       clearTimeout(this.inputDebouncer);
     }
     const searchTerm = e.target.value;
-    const { search, setSearchData } = this.props;
+    const {
+      search,
+      setSearchData,
+      match: { path }
+    } = this.props;
     setSearchData({ searchTerm });
     if (searchTerm.length > 1) {
       this.inputDebouncer = setTimeout(() => {
         search(searchTerm);
+        if (path !== "/") {
+          this.props.history.push("/");
+        }
       }, 400);
     } else {
       setSearchData({ people: [], searchMade: false });
@@ -74,4 +82,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchInput);
+)(withRouter(SearchInput));

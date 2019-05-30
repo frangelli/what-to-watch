@@ -2,4 +2,18 @@
 
 #header {
   background: $white-background !important;
+  .username {
+    margin-right: 10px;
+  }
+}
+
+.login-form-wrapper {
+  position: absolute;
+  width: 400px;
+  height: 180px;
+  top: 64px;
+  right: 0px;
+  padding: 20px;
+  z-index: 999;
+  background: $white-background;
 }

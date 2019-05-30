@@ -1,0 +1,31 @@
+.img {
+  opacity: 1;
+  transition: opacity 0.3s;
+
+  &.loaded {
+    filter: blur(0px);
+  }
+}
+
+.img[data-src] {
+  opacity: 0;
+}
+
+.placeholderImage {
+  filter: blur(20px);
+  transition: filter 0.3s;
+
+  &.loaded {
+    filter: blur(0px);
+  }
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 30px;
+  }
+}

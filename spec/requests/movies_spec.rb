@@ -23,7 +23,7 @@ RSpec.describe 'Movies API', type: :request do
   end
 
   describe 'POST /users/:user_id/movie_lists/:movie_list_id/movies' do
-    let!(:valid_attributes) { {title: "Mission: Impossible - Fallout", imdb_id: "tt4912910"} }
+    let!(:valid_attributes) { {title: "Mission: Impossible - Fallout", imdb_id: "tt4912910", poster_url: "https://m.media-amazon.com/images/M/MV5BNjRlZmM0ODktY2RjNS00ZDdjLWJhZGYtNDljNWZkMGM5MTg0XkEyXkFqcGdeQXVyNjAwMjI5MDk@._V1_SX300.jpg"} }
 
     context 'when the request is valid' do
       before { post "/users/#{user_id}/movie_lists/#{movie_list_id}/movies", params: valid_attributes }

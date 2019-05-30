@@ -9,9 +9,14 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = @movie_list.movies.build(movie_params)
-    @movie.save!
-    json_response(@movie, :created)
+    @movie = @movie_list.movies.find_by(imdb_id: params[:imdb_id])
+    if (@movie.present?) 
+      json_response(@movie, :ok)
+    else
+      @movie = @movie_list.movies.build(movie_params)
+      @movie.save!
+      json_response(@movie, :created)
+    end
   end
 
   def destroy
@@ -21,7 +26,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.permit(:title, :imdb_id)
+    params.permit(:title, :imdb_id, :poster_url)
   end
 
   def set_user
