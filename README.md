@@ -1,24 +1,32 @@
-# README
+# WHAT TO WATCH [LIVE DEMO](https://salty-eyrie-81503.herokuapp.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Movies and TV Show search engine with lists creation feature.
 
-Things you may want to cover:
+## Tech
 
-* Ruby version
+### Backend
 
-* System dependencies
+For backend it uses Ruby on Rails ( API only ) with Postgres database and RSpec for testing.
 
-* Configuration
+### Frontend
 
-* Database creation
+For frontend it uses React + Redux + Webpack
 
-* Database initialization
+## Running it locally
 
-* How to run the test suite
+### clone the repo and from the root directory run:
 
-* Services (job queues, cache servers, search engines, etc.)
+- `bundle install`
+- `rails db:create` (assuming you have postgres installed)
+- `rails db:migrate`
+- `rails s`
 
-* Deployment instructions
+### Running backend tests
 
-* ...
+It has unit tests and request tests.
+
+`bundle exec rspec`
+
+## To build a new frontend version
+
+`cd frontend && npm install && npm run build`
